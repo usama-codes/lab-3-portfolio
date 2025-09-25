@@ -1,0 +1,472 @@
+/* ...existing code... */
+body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #121212;
+      color: #EAEAEA;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: center;
+    background: #1f1f1f;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    float: left;
+    margin: 0 20px;
+    text-decoration: none;
+    color: #EAEAEA;
+    font-weight: bold;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #EAEAEA;
+    left: 0;
+    bottom: 0;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover { color: #EAEAEA; }
+
+/* Clear float after navigation */
+nav::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('hero-bg.jpg') center/cover no-repeat;
+    text-align: center;
+    clear: both;
+}
+
+.hero h1 {
+    font-size: 60px;
+    margin: 0;
+    color: #EAEAEA;
+}
+
+.hero p {
+    font-size: 22px;
+    max-width: 600px;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    background: #00adb5;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #007a80;
+    transform: translateY(-3px);
+}
+
+/* Section Styling */
+section {
+    padding: 60px 20px;
+    text-align: center;
+    clear: both;
+}
+
+section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #00adb5;
+}
+
+/* Consistent heading styles */
+h1 {
+    font-size: 36px;
+    text-align: center;
+    color: #00adb5;
+    margin: 30px 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #2b2b2b;
+    width: 250px;
+    transition: 0.3s;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: #2b2b2b;
+    border-color: #00adb5;
+}
+
+/* Gallery Styling with Float */
+.gallery {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow: hidden; /* Contains floated elements */
+}
+
+.gallery img {
+    float: left;
+    width: calc(33.333% - 20px);
+    height: 250px;
+    margin: 10px;
+    border: 3px solid #2b2b2b;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    object-fit: cover;
+    object-position: center;
+}
+
+.gallery img:hover {
+    border-color: #00adb5;
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 173, 181, 0.3);
+}
+
+/* Clear float after every 3rd image for proper wrapping */
+.gallery img:nth-child(3n) {
+    margin-right: 10px;
+}
+
+.gallery img:nth-child(3n+1) {
+    clear: left;
+}
+
+/* Clear float after gallery */
+.gallery::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Form Styling */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #1f1f1f;
+    border-radius: 10px;
+    border: 2px solid #2b2b2b;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background: #2b2b2b;
+    border: 2px solid #333;
+    border-radius: 5px;
+    color: #EAEAEA;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+form input[type="submit"] {
+    background: #00adb5;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    width: auto;
+    padding: 12px 25px;
+}
+
+form input[type="submit"]:hover {
+    background: #007a80;
+}
+
+/* Footer */
+footer {
+    background: #1f1f1f;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    color: #777;
+    border-top: 2px solid #2b2b2b;
+    clear: both;
+}
+
+.hobbies {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+    clear: both;
+}
+
+/* Hobbies Page Styling */
+.hobbies-section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    clear: both;
+}
+
+.section-description {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hobby-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.hobby-card {
+    background: linear-gradient(145deg, #1f1f1f, #2b2b2b);
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid #333;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hobby-card:hover {
+    transform: translateY(-8px);
+    border-color: #00adb5;
+    box-shadow: 0 8px 25px rgba(0, 173, 181, 0.3);
+}
+
+.hobby-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hobby-card h3 {
+    color: #00adb5;
+    font-size: 24px;
+    margin: 15px 0;
+}
+
+.hobby-card p {
+    color: #ccc;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Skills Page Styling */
+.skills-section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    clear: both;
+}
+
+.skills-container {
+    margin-top: 40px;
+}
+
+.skill-category {
+    margin-bottom: 50px;
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid #333;
+}
+
+.skill-category h2 {
+    color: #00adb5;
+    font-size: 28px;
+    margin-bottom: 25px;
+    text-align: center;
+    border-bottom: 2px solid #333;
+    padding-bottom: 15px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.skill-item {
+    background: #2b2b2b;
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #444;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    border-color: #00adb5;
+    box-shadow: 0 6px 20px rgba(0, 173, 181, 0.2);
+}
+
+.skill-icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.skill-item h3 {
+    color: #fff;
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 8px;
+    background: #444;
+    border-radius: 4px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #00adb5, #007a80);
+    border-radius: 4px;
+    transition: width 0.8s ease;
+    position: relative;
+}
+
+.skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* About section with side-by-side content */
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden; /* Contains floated elements */
+}
+
+.about-text {
+    float: left;
+    width: 60%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.about-image {
+    float: right;
+    width: 35%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid #2b2b2b;
+}
+
+/* Clear float after about content */
+.about-content::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive design considerations */
+@media (max-width: 768px) {
+    .gallery img {
+        width: calc(50% - 20px);
+        height: 200px;
+        margin: 10px;
+    }
+    
+    .gallery img:nth-child(3n) {
+        margin-right: 10px;
+        clear: none;
+    }
+    
+    .gallery img:nth-child(2n+1) {
+        clear: left;
+    }
+    
+    .gallery img:nth-child(3n+1) {
+        clear: none;
+    }
+    
+    nav a {
+        float: none;
+        display: block;
+        text-align: center;
+        margin: 5px 0;
+    }
+    
+    .about-text, .about-image {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery img {
+        width: calc(100% - 20px);
+        height: 250px;
+        margin: 10px;
+        clear: both;
+    }
+    
+    .gallery img:nth-child(n) {
+        clear: both;
+        margin-right: 10px;
+    }
+}
